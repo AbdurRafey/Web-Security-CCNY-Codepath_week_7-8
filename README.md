@@ -6,51 +6,33 @@ Time spent: **15** hours spent in total
 
 ## Pentesting Report
 
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: <img src="Admin_user_Week7-8.gif" width="" alt="">
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: <img src="Attachment_realweek7-8.gif" width="" alt="">
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: <img src="XSS_7-8.gif" width="" alt="">
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
+1. (Required) User ID Enumeration
+  - [x] Summary:  The system was able to detect if any specific username exists or when we login with any username and password as admin
+    - Vulnerability types: user authentication
+    - Tested in version: 4.7
+    - Fixed in version: N/A
+  - [x] GIF Walkthrough: <img src="Admin_user_Week7-8.gif" width="" alt="">
+  - [x] Steps to recreate: Enter "admin" as username and type random passwords. Enter different names as username and type "admin" as password. Try different attempts and at end typoe admin and admin to log in. 
+
+    
+1. (Required) Authenticated Cross-Site Scripting (XSS) via Media File Metadata
+  - [x] Summary: This vulnerability will inject arbitrary web script and abuses the insufficient validation of the file names of uploaded images.
+    - Vulnerability types: XSS
+    - Tested in version: 4.2
+    - Fixed in version: 4.2.13
+  - [x] GIF Walkthrough: <img src="Attachment_realweek7-8.gif" width="" alt="">
+  - [x] Steps to recreate: Create a new media post and upload an image with the following filename format:
+        filename<img src=a onerror=alert(1)>.jpeg
+    
+1. (Required)  Authenticated Shortcode Tags Cross-Site Scripting (XSS)
+  - [x] Summary:  A stored Cross-Site script XSS vulnerablilty which allows remote attackers to inject arbitrary web script/HTML by abusing the way unclosed HTML elements during the processing of shortcode tags are mishandled.
+    - Vulnerability types: XSS
+    - Tested in version:4.2
+    - Fixed in version: 4.2.1
+  - [x] GIF Walkthrough: <img src="XSS_7-8.gif" width="" alt="">
+  - [x] Steps to recreate: Create a new post and place the following code in the body: 
+      <a href="" "onclick=alert(1)">check</a>
+
 
 ## Assets
 
